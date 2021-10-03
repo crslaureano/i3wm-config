@@ -1,0 +1,5 @@
+pane	5	1	1	:*	1	:/home/nyar	1	nvim	:nvim .tmux.conf
+pane	5	2	0	:-	1	:/home/nyar	1	zsh	:
+window	5	1	:nvim	1	:*	d3e2,212x69,0,0,5	:
+window	5	2	:zsh	0	:-	d3e5,212x69,0,0,8	:
+state	5	

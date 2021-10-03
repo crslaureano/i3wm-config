@@ -1,0 +1,7 @@
+pane	18	1	1	:*	1	:/home/nyar/.config/i3blocks\ (deleted)	1	zsh	:
+pane	TMUX	1	1	:*	1	:/home/nyar/.config/i3blocks	1	nvim	:nvim config
+pane	TMUX	2	0	:-	1	:/home/nyar/.config/i3blocks	1	nvim	:nvim memory
+window	18	1	:zsh	1	:*	5fc0,72x46,0,0,30	:
+window	TMUX	1	:nvim	1	:*	e635,103x67,0,0,26	:
+window	TMUX	2	:nvim	0	:-	6631,103x67,0,0,31	:
+state	TMUX	

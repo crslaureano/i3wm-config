@@ -1,0 +1,178 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=15
+
+align=center
+markup=pango
+border_top=0
+border_bottom=3
+border_left=0
+border_right=0
+color=#eeeeee
+
+#[documentation]
+#full_text=Documentation
+#website=https://vivien.github.io/i3blocks
+#command=xdg-open "$website"
+#color=#f12711
+
+#[disk]
+#command=/home/nyar/.config/i3blocks/disk/disk
+#LABEL=HOME 
+#DIR=$HOME
+##ALERT_LOW=10
+#interval=30
+#[pomodorocolor]
+#command=/home/nyar/.config/i3blocks/pomodoro-color.py
+#signal=2
+#interval=1
+#color=#C9CCDB
+#label=
+
+
+#[cpu_usage]
+#interval=1
+#command=/home/nyar/.config/i3blocks/cpu.sh
+#min_width=⣾⣄ 100.00%
+
+[spotify]
+label= 
+command=python /home/nyar/.config/i3blocks/spotify.py
+interval=3
+markup=pango
+color=#1ED760
+border=#1ED760
+
+#[caps]
+#command=/home/nyar/.config/i3blocks/caps.sh
+#interval=once
+#color=#ffffff
+#background=#9f5500
+#align=center
+#min_width=80
+#signal=2
+
+[cpu]
+command=/home/nyar/.config/i3blocks/cpu_usage2/cpu_usage2.c
+interval=persist
+markup=pango
+color=#dfd932
+border=#bfb912
+min_width=70
+align=right
+
+[cpu_util_detailed]
+#command=$SCRIPT_DIR/cpu_util_detailed
+command=/home/nyar/.config/i3blocks/cpu_util_detailed/cpu_util_detailed
+label=💻︁
+markup=pango
+interval=-2
+#report_time=5
+#stats=usr nice sys iowait
+stats=usr
+format=%6.2f
+color=#FFCF43
+#warn=80
+usr_color=#FFCF43
+border=#FFCF43
+#nice_color=yellow
+#sys_color=red
+#iowait_color=grey
+#irq_color=purple
+#soft_color=violet
+#steal_color=orange
+#guest_color=cyan
+#gnice_color=blue
+#idle_color=white
+#total_color=white
+
+[memoria]
+label=︁
+#command=free -m | awk 'NR==2{printf "%.1fG", $3/1024 }'
+command=/home/nyar/.config/i3blocks/memory/memory
+interval=30
+color=#52aeff
+border=#52aeff
+
+[ip]
+#command=hostname -i | awk '{ print "IP:" $1 }'
+#label=︁
+label=︁
+command=ip addr | grep 192 | awk '{print $2}' | sed 's/\/.*//g'
+interval=once
+color=#91E78B
+border=#91E78B
+
+
+[ssid]
+command=/home/nyar/.config/i3blocks/ssid/ssid
+INTERFACE=wlan0
+interval=60
+#STEP=5%
+#MIXER=[determined automatically]
+#SCONTROL=[determined automatically]
+#NATURAL_MAPPING=0
+
+#[connection]
+#command=nmcli device wifi list | grep '*' | awk '{print $3}'
+#interval=once
+#border=#9F78E1
+
+#[greetings]
+#color=#f5af19
+#command=echo "Hello, $USER!"
+#interval=once
+
+[user]
+label=︁
+command=echo 'クリスチャン'
+interval=once
+color=#E60576
+#border=#5CE0D8
+border=#E60576
+
+#[github]
+#command=/home/nyar/.config/i3blocks/github/github
+#interval=60
+#format=json
+#markup=pango
+#color=#05F4B7
+#border=#05F4B7
+
+[time]
+command=date +'︁ %d//%m 🕓︁ %H:%M'
+interval=1
+color=#05F4B7
+border=#05F4B7
+
+#[volume-pulseaudio]
+#command=/home/nyar/.config/i3blocks/volume-pulseaudio/volume-pulseaudio
+#interval=once
+#signal=1
+##MIXER=[determined automatically]
+##SCONTROL=[determined automatically]
+###exposed format variables: ${SYMB}, ${VOL}, ${INDEX}, ${NAME}
+##LONG_FORMAT="${SYMB} ${VOL}% [${INDEX}:${NAME}]"
+#LONG_FORMAT="${SYMB}${VOL}"
+##SHORT_FORMAT="${SYMB} ${VOL}% [${INDEX}]"
+##AUDIO_HIGH_SYMBOL='  '
+##AUDIO_MED_THRESH=50
+##AUDIO_MED_SYMBOL='  '
+##AUDIO_LOW_THRESH=0
+##AUDIO_LOW_SYMBOL='  '
+##AUDIO_DELTA=5
+##DEFAULT_COLOR="#ffffff"
+##MUTED_COLOR="#a0a0a0"
+##USE_ALSA_NAME=0
+##USE_DESCRIPTION=0
+### SUBSCRIBE=1 requires interval=persist and always uses LONG_FORMAT
+##SUBSCRIBE=0
+##
